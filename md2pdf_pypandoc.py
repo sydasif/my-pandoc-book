@@ -3,7 +3,7 @@ import pypandoc
 
 input_dir = "chapters"
 output_dir = "my_book"
-output_filename = "book_output_02.pdf"
+output_filename = "book_output.pdf"
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
@@ -18,11 +18,6 @@ pandoc_cmd = [
     "--include-in-header", "main.tex",
     "--highlight-style", "pygments.theme",
     "-V", "toc-title=Table of contents",
-    "-V", "linkcolor=blue",
-    "-V", "geometry:a4paper",
-    "-V", "geometry:margin=1in",
-    "-V", "mainfont=DejaVu Serif",
-    "-V", "monofont=SauceCodePro Nerd Font",
 ]
 
 output_path = os.path.join(output_dir, output_filename)
