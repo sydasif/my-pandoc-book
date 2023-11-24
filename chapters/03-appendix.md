@@ -95,7 +95,11 @@ pandoc_cmd = [
 
 output_path = os.path.join(output_dir, output_filename)
 # Convert all markdown files in the chapters/ subdirectory.
-pypandoc.convert_file(os.path.join(input_dir, '*.md'), 'pdf', outputfile=output_path, extra_args=pandoc_cmd)
+pypandoc.convert_file(
+    os.path.join(input_dir, '*.md'), 'pdf', 
+    outputfile=output_path, 
+    extra_args=pandoc_cmd
+)
 
 print(f"Conversion completed. Output saved to: {output_path}")
 ```
