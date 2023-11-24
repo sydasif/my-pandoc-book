@@ -1,12 +1,13 @@
+% Inline code
 \usepackage{fancyvrb,newverbs,xcolor}
-
 \definecolor{Light}{HTML}{F4F4F4}
 
 \let\oldtexttt\texttt
 \renewcommand{\texttt}[1]{
   \colorbox{Light}{\oldtexttt{#1}}
 }
-
+% --------------------------------------
+% Bullet styling
 \usepackage{enumitem}
 \usepackage{amsfonts}
 
@@ -16,10 +17,13 @@
 \setlist[itemize,2]{label=$\circ$}
 % level three
 \setlist[itemize,3]{label=$\star$}
-
+% --------------------------------------
+% Chapter breaks
 \usepackage{sectsty}
 \sectionfont{\clearpage}
-
+% --------------------------------------
+% Stylish blockquote
 \usepackage{tcolorbox}
 \newtcolorbox{myquote}{colback=red!5!white, colframe=red!75!black}
 \renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
+% ------------------------------------------------------------------

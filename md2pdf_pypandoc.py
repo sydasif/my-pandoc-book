@@ -19,7 +19,6 @@ pandoc_cmd = [
     "--highlight-style", "pygments.theme",
     "-V", "toc-title=Table of contents",
     "-V", "linkcolor=blue",
-    # "-V", "documentclass=book"
     "-V", "geometry:a4paper",
     "-V", "geometry:margin=1in",
     "-V", "mainfont=DejaVu Serif",
