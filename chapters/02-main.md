@@ -122,12 +122,12 @@ True
 
 # Bullets
 
-* fruit
-    * apple
-    * mango
-    * grape
-        * green
-        * black seedless
+- fruit
+    - apple
+    - mango
+    - grape
+        - green
+        - black seedless
 * pet
     * cat
     * dog
