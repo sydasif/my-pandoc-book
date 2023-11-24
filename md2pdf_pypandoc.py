@@ -17,6 +17,7 @@ pandoc_cmd = [
     "--metadata-file", "metadata.yml",
     "--include-in-header", "main.tex",
     "--highlight-style", "pygments.theme",
+    "--include-before-body", "cover.tex",
     "-V", "toc-title=Table of contents",
 ]
 
