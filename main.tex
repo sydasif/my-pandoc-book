@@ -1,29 +1,22 @@
-% Inline code
-\usepackage{fancyvrb,newverbs,xcolor}
-\definecolor{Light}{HTML}{F4F4F4}
+% main.tex
+% \documentclass[a4paper,11pt]{article}
+\usepackage[english]{babel}
+\usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=0.5cm]{geometry}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LE]{\scshape\nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+\fancyfoot[LE,RO]{\thepage}
+\pagestyle{fancy}
 
-\let\oldtexttt\texttt
-\renewcommand{\texttt}[1]{
-  \colorbox{Light}{\oldtexttt{#1}}
-}
-% --------------------------------------
-% Bullet styling
-\usepackage{enumitem}
-\usepackage{amsfonts}
+% Include additional settings
+\input{inline_code.tex}
+\input{bullet_styling.tex}
+\input{chapter_breaks.tex}
+\input{blockquote.tex}
+\input{hyperref_setup.tex}
 
-% level one
-\setlist[itemize,1]{label=$\bullet$}
-% level two
-\setlist[itemize,2]{label=$\circ$}
-% level three
-\setlist[itemize,3]{label=$\star$}
-% --------------------------------------
-% Chapter breaks
-\usepackage{sectsty}
-\sectionfont{\clearpage}
-% --------------------------------------
-% Stylish blockquote
-\usepackage{tcolorbox}
-\newtcolorbox{myquote}{colback=red!5!white, colframe=red!75!black}
-\renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
-% ------------------------------------------------------------------
+% Font settings
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif} % Set your main font
+\setmonofont{SauceCodePro Nerd Font} % Set your monospace (code) font
