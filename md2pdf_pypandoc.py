@@ -10,19 +10,20 @@ os.makedirs(output_dir, exist_ok=True)
 
 # Build the pandoc options as a string
 pandoc_cmd = [
-    "--toc",
+    "--table-of-contents",
     "--number-sections",
     "--resource-path=.",
+    "--pdf-engine=xelatex",
     "--metadata-file", "metadata.yml",
     "--include-in-header", "main.tex",
     "--highlight-style", "pygments.theme",
     "-V", "toc-title=Table of contents",
-    "-V", "linkcolor:blue",
+    "-V", "linkcolor=blue",
+    # "-V", "documentclass=book"
     "-V", "geometry:a4paper",
-    "-V", "geometry:margin=1.8cm",
+    "-V", "geometry:margin=1in",
     "-V", "mainfont=DejaVu Serif",
     "-V", "monofont=SauceCodePro Nerd Font",
-    "--pdf-engine=xelatex",
 ]
 
 output_path = os.path.join(output_dir, output_filename)
