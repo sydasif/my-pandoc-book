@@ -34,7 +34,9 @@ numbers = [2, 12, 3, 25, 624, 21, 5, 9, 12]
 odd_numbers = []
 even_numbers = []
 
-numbers.each { |n| n.even? ? even_numbers.append(n) : odd_numbers.append(n) }
+numbers.each { 
+    |n| n.even? ? even_numbers.append(n) : odd_numbers.append(n) 
+    }
 
 puts "numbers:      #{numbers}"
 puts "odd_numbers:  #{odd_numbers}"
