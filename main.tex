@@ -4,15 +4,14 @@
 \usepackage[english]{babel}
 
 % Adjust page geometry
-\usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=0.5cm]{geometry}
+\usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=2cm, bindingoffset=0.5cm]{geometry}
 
-% Configure fancy headers and footers
-\usepackage{fancyhdr}
-\fancyhf{}
-\fancyhead[LE]{\scshape\nouppercase{\leftmark}}
-\fancyhead[RO]{\nouppercase{\rightmark}}
-\fancyfoot[LE,RO]{\thepage}
-\pagestyle{fancy}
+% Configure headers and footers using scrlayer-scrpage
+\usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\headmark}
+\ofoot{\pagemark}
+\pagestyle{scrheadings}
 
 % Include additional settings from external files
 \input{inline_code.tex}
