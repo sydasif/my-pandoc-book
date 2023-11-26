@@ -1,7 +1,10 @@
 % inline_code.tex
 % Inline code setup
 \usepackage{fancyvrb,newverbs,xcolor}
+
+% Define a color for the code background
 \definecolor{Light}{HTML}{F4F4F4}
 
+% Redefine the \texttt command to highlight code with a light background
 \let\oldtexttt\texttt
 \renewcommand{\texttt}[1]{\colorbox{Light}{\oldtexttt{#1}}}
