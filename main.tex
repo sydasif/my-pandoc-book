@@ -1,7 +1,12 @@
 % main.tex
-% \documentclass[a4paper,11pt]{article}
+
+% Set the document language to English
 \usepackage[english]{babel}
+
+% Adjust page geometry
 \usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=0.5cm]{geometry}
+
+% Configure fancy headers and footers
 \usepackage{fancyhdr}
 \fancyhf{}
 \fancyhead[LE]{\scshape\nouppercase{\leftmark}}
@@ -9,14 +14,14 @@
 \fancyfoot[LE,RO]{\thepage}
 \pagestyle{fancy}
 
-% Include additional settings
+% Include additional settings from external files
 \input{inline_code.tex}
 \input{bullet_styling.tex}
 \input{chapter_breaks.tex}
 \input{blockquote.tex}
 \input{hyperref_setup.tex}
 
-% Font settings
+% Font settings using fontspec
 \usepackage{fontspec}
 \setmainfont{DejaVu Serif} % Set your main font
 \setmonofont{SauceCodePro Nerd Font} % Set your monospace (code) font
