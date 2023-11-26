@@ -16,7 +16,7 @@ pandoc_cmd = [
     "--pdf-engine=xelatex",
     "--metadata-file", "metadata.yml",
     "--include-in-header", "main.tex",
-    "--highlight-style", "pygments.theme",
+    "--highlight-style", "tango",
     "--include-before-body", "cover.tex",
     "-V", "toc-title=Table of contents",
 ]
