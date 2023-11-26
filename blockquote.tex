@@ -1,5 +1,7 @@
 % blockquote.tex
 % Stylish blockquote setup
-\usepackage{tcolorbox}
+\usepackage{tcolorbox} % Load the tcolorbox package for creating colored boxes
+ % Define a new tcolorbox environment named 'myquote' with specified colors
 \newtcolorbox{myquote}{colback=red!5!white, colframe=red!75!black}
-\renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
+% Redefine the standard 'quote' environment to use 'myquote'
+\renewenvironment{quote}{\begin{myquote}}{\end{myquote}} 
