@@ -40,11 +40,11 @@ Computer programming involves composing elements of a selected programming langu
 
 There are two primary methods for translating a program from a high-level programming language into machine language:
 
-**COMPILATION:** The source program is translated once to create a file containing machine code. This resulting file can be distributed globally, and the program responsible for this translation is known as a compiler.
+**Compilation:** The source program is translated once to create a file containing machine code. This resulting file can be distributed globally, and the program responsible for this translation is known as a compiler.
 
-**INTERPRETATION:** The source program is translated each time it needs to run. The program performing this kind of transformation is an interpreter, as it interprets the code every time it’s executed. This also implies that you can’t distribute the source code as-is; the end-user also requires the interpreter to execute it.
+**Interpretation:** The source program is translated each time it needs to run. The program performing this kind of transformation is an interpreter, as it interprets the code every time it’s executed. This also implies that you can’t distribute the source code as-is; the end-user also requires the interpreter to execute it.
 
-### Compilation — Advantages and Disadvantages
+### Compilation — advantages and disadvantages
 
 **Advantages**:
 
@@ -57,7 +57,7 @@ There are two primary methods for translating a program from a high-level progra
 - Compilation is a time-consuming process; you can’t run your code immediately after making changes.
 - You require a compiler for each hardware platform you want your code to run on.
 
-### Interpretation — Advantages and Disadvantages
+### Interpretation — advantages and disadvantages
 
 **Advantages**:
 
@@ -71,13 +71,13 @@ There are two primary methods for translating a program from a high-level progra
 
 Python falls into the category of interpreted languages. To program in Python, you’ll need a Python interpreter. Without it, you won’t be able to execute your code. The best part is that Python is free, making it one of its most significant advantages. Languages designed for interpretation are often referred to as scripting languages, and the source programs written in them are called scripts.
 
-## Understanding Python
+## Understanding Python Language
 
 Python is a widely-used, interpreted, object-oriented, high-level programming language with dynamic semantics. It’s employed for general-purpose programming and is known for its versatility. The name “Python” comes from an old BBC television comedy sketch series called Monty Python’s Flying Circus.
 
-Python’s creation is credited to Guido van Rossum, born in 1956 in Haarlem, the Netherlands. While Python’s popularity has grown worldwide, it’s essential to acknowledge that it all started with Guido’s vision.
+Python’s creation is credited to *Guido van Rossum*, born in `1956` in Haarlem, the Netherlands. While Python’s popularity has grown worldwide, it’s essential to acknowledge that it all started with Guido’s vision.
 
-In 1999, Guido van Rossum outlined his goals for Python:
+In `1999`, *Guido van Rossum* outlined his goals for Python:
 
 - Create an easy, intuitive, and powerful language.
 - Keep it open source.
@@ -85,7 +85,7 @@ In 1999, Guido van Rossum outlined his goals for Python:
 - Ensure it’s suitable for everyday tasks, allowing for short development times.
 - Python has matured and gained trust in the programming world. It’s not just a flash in the pan but a bright star in the programming firmament.
 
-### What Sets Python Apart?
+### What sets Python apart?
 
 There are numerous reasons why Python stands out, as we’ve mentioned earlier. Let’s summarize them practically:
 
@@ -97,7 +97,7 @@ There are numerous reasons why Python stands out, as we’ve mentioned earlier. 
 
 It’s worth noting that Python is not the only solution in the programming landscape.
 
-### Python’s Competitors
+### Python’s competitors
 
 Python has two direct competitors that share similar properties and capabilities:
 
