@@ -1,6 +1,6 @@
-# Python Programming - Introduction
+# Computer Programming - Introduction
 
-Inside every computer, there’s a special set of instructions that makes it work, called a computer program. It’s the essential life force that transforms computer hardware into a functional entity. To help you grasp this concept, think of a computer as a piano — a beautiful instrument that remains silent without a skilled musician.
+Inside every computer, there’s a special set of instructions that makes it work—called a computer program. It’s the essential life force that transforms computer hardware into a functional entity. To help you grasp this concept, think of a computer as a piano—a beautiful instrument that remains silent without a skilled musician.
 
 Computers, by their nature, are exceptionally proficient at executing basic operations. They excel in tasks such as addition and division, performing these operations at lightning speed and with flawless accuracy.
 
@@ -30,7 +30,7 @@ Every language, whether natural or machine-based, comprises the following key el
 - Syntax: A set of rules governing the structure of sentences and phrases.
 - Semantics: A set of rules determining the meaning of a given phrase or sentence.
 
-In the case of machine language, the IL serves as the alphabet (zero and ones). However, humans require a more expressive language to write programs — one that computers can execute. These languages, often known as high-level programming languages, share similarities with natural languages. They employ symbols, words, and conventions that humans can understand. High-level languages empower humans to issue commands to computers that are more complex than what ILs allow.
+In the case of machine language, the IL serves as the alphabet (zeroes and ones). However, humans require a more expressive language to write programs—one that computers can execute. These languages, often known as high-level programming languages, share similarities with natural languages. They employ symbols, words, and conventions that humans can understand. High-level languages empower humans to issue commands to computers that are more complex than what ILs allow.
 
 A program written in a high-level programming language is referred to as source code, and the file containing this source code is known as a source file.
 
@@ -107,8 +107,3 @@ Python has two direct competitors that share similar properties and capabilities
 Perl leans towards tradition and convention and has similarities with older languages derived from classic C programming. On the other hand, Ruby is more progressive and filled with fresh ideas. Python finds its place somewhere between these two options.
 
 Python’s growth is evident as more development tools are implemented in Python. Many everyday use applications are being written in Python, and numerous scientists have abandoned expensive proprietary tools in favor of Python.
-
-However, despite Python’s growing popularity, there are still certain niches where Python is either absent or rarely used:
-
-- Low-Level Programming: For implementing highly efficient drivers or graphical engines, Python may not be the go-to choice.
-- Applications for Mobile Devices: This domain is still waiting for Python to make significant inroads.
