@@ -2,7 +2,7 @@
 
 Numbers in Python are a fundamental data type used for various mathematical operations and calculations. There are primarily two numeric data types in Python: integers (int) and floating-point numbers (float).
 
-1. *Integers Numbers (int):* Integers are whole numbers without any decimal point. They can be positive, negative, or zero. For example, 5, -10, and 0 are all integers in Python. Integers are typically used when you need to work with discrete values or countable objects.
+1. *Integers Numbers (int):* Integers are typically used when working with discrete values or countable objects. They can be positive, negative, or zero. For example, 5, -10, and 0 are all integers in Python. Integers are typically used when you need to work with discrete values or countable objects.
 
 2. *Floating-Point Numbers (float):* Floating-point numbers, or floats, are numbers that include a decimal point or use scientific notation, such as 3.14 or 2.5e-3. Floats are used when you need to work with real numbers, including fractional values and approximate calculations.
 
@@ -23,7 +23,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 22
 ```
 
-In this example, we've assigned the integer value 22 to the variable `my_var`.
+In this example, we assigned the integer value 22 to the variable `my_var`.
 
 ### Type checking of integer
 
@@ -37,7 +37,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: <class 'int'>
 ```
 
-This indicates that `my_var` is an integer.
+This indicates that `my_var` is of integer type.
 
 ## Math Operations with Integers
 
@@ -53,7 +53,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 39
 ```
 
-The `result` variable now contains the value `39`.
+The result variable now holds the value `39`.
 
 - *Subtraction:* Subtraction is done using the `-` operator:
 
@@ -139,7 +139,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 5.5
 ```
 
-The `result` variable now contains the value `5.5`, which is the sum of the two floats.
+he result variable now holds the value `5.5`, the sum of the two floats.
 
 - *Division:* Division is performed with the `/` operator:
 
@@ -177,7 +177,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 1
 ```
 
-The `result` variable now contains the integer value `1`, which is the result of rounding `4/3`.
+The result variable now holds the integer value `1`, which is the result of rounding `4/3`.
 
 Floats are essential for handling real numbers and approximate calculations, making Python a versatile language for various mathematical computations and scientific applications.
 
@@ -197,7 +197,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 1
 ```
 
-The `result` variable will contain the value `1` because `9` divided by `2` leaves a remainder of `1`.
+The result variable will hold the value `1` because `9` divided by `2` leaves a remainder of `1`.
 
 ### Power operator (**)
 
@@ -211,7 +211,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 8
 ```
 
-The `result` variable will contain the value `8` because `2` raised to the power of `3` is `8`.
+The result variable will hold the value `8` because `2` raised to the power of `3` is `8`.
 
 These operators expand the range of mathematical operations you can perform in Python, allowing for tasks like finding remainders and calculating exponents in your numerical computations.
 
@@ -232,7 +232,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 1
 ```
 
-After these operations, the variable `i` will hold the value `1`.
+After these operations, the variable `i` hold the value `1`.
 
 ### Using augmented assignment
 
@@ -262,7 +262,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # Output: 9
 ```
 
-After these operations, the variable `i` will hold the value `9`. You can achieve the same result using the augmented assignment operator for decrement:
+After these operations, the variable `i` hold the value `9`. You can achieve the same result using the augmented assignment operator for decrement:
 
 ```python
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
