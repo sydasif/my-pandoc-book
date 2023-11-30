@@ -9,7 +9,7 @@ Learn network programmability with Python, GNS3, and Cisco devices.
 
 ### About the author
 
-I am an Associate Engineer (DAE in Electronics), delving into network automation as a hobby after 25 years of working in the field of Computer Networking. My skills as an Associate Engineer include:
+I am an Associate Engineer (DAE in Electronics) exploring network automation as a hobby after  working in computer networks for 25 years. My skills as an Associate Engineer include:
 
 - Routing and Switching
 - OFC/LAN Networking
@@ -23,4 +23,4 @@ I am an Associate Engineer (DAE in Electronics), delving into network automation
 
 ## Conventions
 
-This book serves as a guide for network engineers and is crafted for network engineers to write casual code. Therefore, not much time is spent on style and beauty. Programming concepts, such as object-oriented programming, aren’t covered in detail due to their complexity. However, this book is mainly concerned with getting programs to work with the minimum amount of effort required to automate network equipment.
+This book is a guide for network engineers and is intended for network engineers to write code. Therefore, no time is spent on coding style. Programming concepts such as object-oriented programming are not covered in detail due to their complexity. However, this book  mainly focuses on getting  Python scripting to work with minimal effort  to automate network devices.
