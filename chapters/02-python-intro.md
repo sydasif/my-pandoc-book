@@ -1,73 +1,70 @@
 # Computer Programming - Introduction
 
-Inside every computer, there’s a special set of instructions that makes it work—called a computer program. It’s the essential life force that transforms computer hardware into a functional entity. To help you grasp this concept, think of a computer as a piano—a beautiful instrument that remains silent without a skilled musician.
+Inside every computer, there’s a special set of instructions that makes a computer to work, is called a computer program. It’s the essential life force that transforms computer hardware into a functional device. To help you understand this concept, think of a computer as a piano, an instrument that remains silent without a skilled musician.
 
-Computers, by their nature, are exceptionally proficient at executing basic operations. They excel in tasks such as addition and division, performing these operations at lightning speed and with flawless accuracy.
+However, computers, by their nature, are exceptionally proficient at executing some basic operations, such as addition and division, etc. A computer is performing these operations at lightning speed and with flawless accuracy.
 
-Now, let’s delve into a practical scenario. Imagine you’re on a long road trip, and you want to calculate your average speed. You have the distance you’ve traveled and the time it took, but here’s the catch: computers don’t intuitively understand these concepts as humans do. Therefore, you need to provide precise instructions to the computer, instructing it to:
+Now, taking into a practical scenario. Imagine you’re on a long road trip, and you want to calculate your average speed. The distance you’ve traveled and the time it took to reach your destination, but here’s the problem, that  computers don’t intuitively understand these concepts as a human you do. Therefore, you need to provide precise instructions to the computer, as instructing it to:
 
 - Accept a numerical value representing the distance.
 - Accept a numerical value representing the travel time.
 - Divide the distance by the time and store the result in memory.
 - Display the result (average speed) in a human-readable format.
 
-When combined, these four apparently simple actions constitute a computer program. Even though these actions are different from what a computer naturally understands, they can be translated into a language that the computer can understand.
+When combined, all these four apparently simple actions make a computer program. Even though these actions are different from that of what a computer naturally understands, they can be translated into a language that the computer can understand.
 
 ## Natural Languages vs. Programming Languages
 
-Languages serve as tools for expressing intentions and transferring knowledge. Some languages require no spoken or written words, relying on gestures or body language, while others, like our mother tongue, enable us to convey our thoughts and reflect reality. Computers have their own language, known as machine language, which is complex and challenging for humans to grasp fully.
+Human language serve as tools for expressing intentions and transferring knowledge. Even though some languages require no spoken or written words, as they rely on gestures or body language, while others, like our mother tongue, enable us to convey our thoughts and reflect reality. Computers have their own language, known as machine language, which is complex and challenging for humans to understand fully.
 
-It’s crucial to recognize that even the most advanced computers lack true intelligence. They respond solely to a predefined set of known commands, often very basic ones. Think of it as computers following orders like “take this number, divide it by another, and save the result.” This set of known commands is referred to as an instruction list or IL.
+It’s important to note that even the most advanced computers lack true intelligence, because they responded solely to a predefined set of known commands, often very basic ones. Think of it as computers following orders like “take this number, divide it by another, and save the result.” This set of known commands is referred to as an instruction list or `IL`.
 
-> Machine languages are created by humans.
+> *Note*: machine languages are also created by humans.
 
-## The Anatomy of a Language
+### The Anatomy of a Language
 
 Every language, whether natural or machine-based, comprises the following key elements:
 
-- Alphabet: A set of symbols used to construct words within the language.
-- Lexis (Dictionary): A collection of words and their meanings within the language.
-- Syntax: A set of rules governing the structure of sentences and phrases.
-- Semantics: A set of rules determining the meaning of a given phrase or sentence.
 
-In the case of machine language, the IL serves as the alphabet (zeroes and ones). However, humans require a more expressive language to write programs—one that computers can execute. These languages, often known as high-level programming languages, share similarities with natural languages. They employ symbols, words, and conventions that humans can understand. High-level languages empower humans to issue commands to computers that are more complex than what ILs allow.
+- ***Alphabet:*** A set of symbols used to construct words within the language.
+- ***Lexis (Dictionary):*** A collection of words and their meanings within the language.
+- ***Syntax:*** A set of rules governing the structure of sentences and phrases.
+- ***Semantics:*** A set of rules determining the meaning of a given phrase or sentence.
 
-A program written in a high-level programming language is referred to as source code, and the file containing this source code is known as a source file.
+In the case of machine language, the `IL` serves as the alphabet (`zeroes` and `ones`). However, humans require a more expressive language to write programs—one that computers can execute. These languages, often known as high-level programming languages, share similarities with natural languages. They have symbols, words, and conventions that humans can understand, high-level languages empower humans to issue commands to computers.
 
-## Compilation vs. Interpretation
+A program written in a high-level programming language is referred to as `source code`, and the file containing this source code is known as a `source file`.
 
-Computer programming involves composing elements of a selected programming language in a manner that achieves the desired outcome. This outcome can vary widely depending on the programmer’s imagination, knowledge, and experience.
+### Compilation vs. Interpretation
+
+Computer programming involves composing elements of a selected programming language in a manner that achieves the desired outcome. This outcome has depending on the programmer’s imagination, knowledge, and experience.
 
 There are two primary methods for translating a program from a high-level programming language into machine language:
 
-**Compilation:** The source program is translated once to create a file containing machine code. This resulting file can be distributed globally, and the program responsible for this translation is known as a compiler.
+1. ***Compilation:*** The source program is translated once to create a file containing machine code. This resulting file can be distributed globally, and the program responsible for this translation is known as a `compiler`.
 
-**Interpretation:** The source program is translated each time it needs to run. The program performing this kind of transformation is an interpreter, as it interprets the code every time it’s executed. This also implies that you can’t distribute the source code as-is; the end-user also requires the interpreter to execute it.
+2. ***Interpretation:*** The source program is translated each time it needs to run. The program performing this kind of transformation is an `interpreter`, as it interprets the code every time it’s executed. This also implies that you can’t distribute the source code as-is; the end-user also requires the interpreter to execute it.
 
-### Compilation — advantages and disadvantages
+#### Compilation — advantages and disadvantages
 
-**Advantages**:
+- **Advantages**:
+    - Executed code is typically faster.
+    - Only the user needs the compiler; the end-user can use the code without it.
+    - The translated code is stored in machine language, keeping it secure.
 
-- Executed code is typically faster.
-- Only the user needs the compiler; the end-user can use the code without it.
-- The translated code is stored in machine language, keeping it secure.
+- **Disadvantages**:
+    - Compilation is a time-consuming process; you can’t run your code immediately after making changes.
+    - You require a compiler for each hardware platform you want your code to run on.
 
-**Disadvantages**:
+#### Interpretation — advantages and disadvantages
 
-- Compilation is a time-consuming process; you can’t run your code immediately after making changes.
-- You require a compiler for each hardware platform you want your code to run on.
+- **Advantages**:
+    - You can run the code as soon as you finish writing it; no need for additional translation phases.
+    - The code is stored in a programming language, not machine language. It can run on computers with different architectures without separate compilation.
 
-### Interpretation — advantages and disadvantages
-
-**Advantages**:
-
-- You can run the code as soon as you finish writing it; no need for additional translation phases.
-- The code is stored in a programming language, not machine language. It can run on computers with different architectures without separate compilation.
-
-**Disadvantages**:
-
-- Interpretation doesn’t result in high-speed execution; your code shares resources with the interpreter.
-- Both you and the end-user require the interpreter to run your code.
+- **Disadvantages**:
+    - Interpretation doesn’t result in high-speed execution; your code shares resources with the interpreter.
+    - Both you and the end-user require the interpreter to run your code.
 
 Python falls into the category of interpreted languages. To program in Python, you’ll need a Python interpreter. Without it, you won’t be able to execute your code. The best part is that Python is free, making it one of its most significant advantages. Languages designed for interpretation are often referred to as scripting languages, and the source programs written in them are called scripts.
 
