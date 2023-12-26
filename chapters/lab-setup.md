@@ -55,7 +55,7 @@ In this section, we'll focus on configuring the Ubuntu 22 Server within your vir
 3. Select the network adapter connected to your physical network.
 4. Click "OK" to save the changes.
 
-![vm-br-nt](/images/vm-br-nt.PNG)
+![bridge mode](/images/vm-br-nt.jpg)
 
 ### Start Ubuntu Server
 
@@ -94,7 +94,7 @@ In this section, we'll expand your virtual network lab in GNS3 by adding a cloud
 2. In the "Node Configurations" window, select the "Ethernet Interface" tab.
 3. Choose the network adapter that corresponds to your physical network.
 
-![cloud-node](/images/cloud-node.PNG)
+![cloud node](/images/cloud-node.jpg)
 
 ### Apply Changes
 
@@ -122,7 +122,7 @@ Once VSCode is installed, open the application on your Windows PC.
 2. Search for "Remote - SSH" in the Extensions view search box.
 3. Click "Install" next to the "Remote - SSH" extension.
 
-![ssh-ext](/images/ssh-ext.PNG)
+![ssh ext](/images/ssh-ext.jpg)
 
 ### Configure SSH Connection
 
@@ -130,7 +130,7 @@ In the bottom-left corner of the VSCode window, click on the blue square icon (R
 Click on the "Connect to Host" to add a new SSH target.
 Enter the SSH connection details for your Ubuntu Server (username, IP address).
 
-![ssh-con](images/re-con.png)
+![ssh con](/images/re-con.jpg)
 
 With VSCode and the SSH extension installed, you now have a powerful coding environment directly linked to your Ubuntu Server. This integration streamlines the process of writing and testing Python scripts for your network lab.
 
