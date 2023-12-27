@@ -20,7 +20,8 @@ To create an integer variable, simply assign a whole number to it. For instance:
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = 22
-# Output: 22
+>>> print(my_var)
+22
 ```
 
 In this example, we assigned the integer value 22 to the variable `my_var`.
@@ -34,7 +35,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = 22
 >>> print(type(my_var))
-# Output: <class 'int'>
+<class 'int'>
 ```
 
 This indicates that `my_var` is of integer type.
@@ -50,7 +51,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 17 + 22
 >>> print(result)
-# Output: 39
+39
 ```
 
 The result variable now holds the value `39`.
@@ -62,7 +63,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 22 - 7
 >>> print(result)
-# Output: 15
+15
 ```
 
 The `result` variable now contains the value `15`.
@@ -74,7 +75,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 3 * 4
 >>> print(result)
-# Output: 12
+12
 ```
 
 The `result` variable now contains the value `12`.
@@ -86,7 +87,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 4 / 7
 >>> print(result)
-# Output: 0.5714285714285714
+0.5714285714285714
 ```
 
 The `result` variable now contains the float value `0.5714285714285714`.
@@ -106,7 +107,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = 3.3
 >>> print(my_var)
-# Output: 3.3
+3.3
 ```
 
 In this case, we've assigned the float value `3.3` to the variable `my_var`.
@@ -120,7 +121,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = 3.3
 >>> print(type(my_var))
-# Output:  <class 'float'>
+<class 'float'>
 ```
 
 When you run this code, it will produce the output; `<class 'float'>` this confirms that `my_var` is a float.
@@ -136,7 +137,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 3.3 + 2.2
 >>> print(result)
-# Output: 5.5
+5.5
 ```
 
 he result variable now holds the value `5.5`, the sum of the two floats.
@@ -147,8 +148,8 @@ he result variable now holds the value `5.5`, the sum of the two floats.
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 7 / 2
-print(result)
-# Output: 3.5
+>>> print(result)
+3.5
 ```
 
 The `result` variable now contains the float value `3.5`, which is the result of dividing `7` by `2`.
@@ -160,7 +161,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 3.1 * 2.5
 >>> print(result)
-# Output: 7.75
+7.75
 ```
 
 The `result` variable now contains the value `7.75`, which is the product of `3.1` and `2.5`.
@@ -174,7 +175,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = round(4 / 3)
 >>> print(result)
-# Output: 1
+1
 ```
 
 The result variable now holds the integer value `1`, which is the result of rounding `4/3`.
@@ -194,7 +195,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 9 % 2
 >>> print(result)
-# Output: 1
+1
 ```
 
 The result variable will hold the value `1` because `9` divided by `2` leaves a remainder of `1`.
@@ -208,7 +209,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> result = 2 ** 3
 >>> print(result)
-# Output: 8
+8
 ```
 
 The result variable will hold the value `8` because `2` raised to the power of `3` is `8`.
@@ -229,7 +230,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> i = 0   # Initialize i to 0
 >>> i = i + 1   # Increment i by 1
 >>> print(i)
-# Output: 1
+1
 ```
 
 After these operations, the variable `i` hold the value `1`.
@@ -244,7 +245,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> i = 0   # Initialize i to 0
 >>> i += 1  # Increment i by 1
 >>> print(i)
-# Output: 1
+1
 ```
 
 This code achieves the same result as the previous example, with the variable `i` also holding the value `1`.
@@ -259,7 +260,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> i = 10   # Initialize i to 10
 >>> i = i - 1   # Decrement i by 1
 >>> print(i)
-# Output: 9
+9
 ```
 
 After these operations, the variable `i` hold the value `9`. You can achieve the same result using the augmented assignment operator for decrement:
@@ -270,7 +271,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> i = 10   # Initialize i to 10
 >>> i -= 1   # Decrement i by 1
 >>> print(i)
-# Output: 9
+9
 ```
 
 In this case, the variable `i` also ends up with the value `9`.
