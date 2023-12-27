@@ -90,7 +90,7 @@ router
 'router'
 ```
 
-Once a variable is assigned, we can easily print it using the `print` command. However, while in the Python shell, you can also print `hostname` value or any other variable by just typing in the name of the variable and pressing `Enter` key. It's particularly helpful when you're learning Python or troubleshooting issues in your scripts.
+Once a variable is assigned, we can easily print it using the `print()` command. However, while in the Python shell, you can also print `hostname` value or any other variable by just typing in the name of the variable and pressing `Enter` key. It's particularly helpful when you're learning Python or troubleshooting issues in your scripts.
 
 ## Assignment Operator and Variable
 
@@ -101,8 +101,6 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> test = 'test'
 >>> ip_addr = '192.168.1.1'
->>> dc_svr = 'svr.test.com'
->>> global_delay_factor = 4
 ```
 
 Variable assignment in Python is flexible and forgiving, offering room for creativity. However, it's essential to follow some best practices to write clean and maintainable code.
@@ -158,19 +156,20 @@ By following these nuanced naming conventions, you'll make your Python code more
 
 ## Print Function
 
-The `print` function is a fundamental tool for displaying output in Python. It allows you to communicate information to users, debug your code, and provide feedback. To use the `print` function, follow this format:
+The `print()` function is a fundamental tool for displaying output in Python. It allows you to communicate information to users, debug your code, and provide feedback. To use the `print()` function, follow this format:
 
 ```python
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print("Hello, Python!")
+Hello, Python!
 ```
 
-Here, the text enclosed in double quotes is the message you want to display. You can print variables, numbers, or any other data type using the `print` function.
+Here, the text enclosed in double quotes is the message you want to display. You can print variables, numbers, or any other data type using the `print()` function.
 
 ## Input Function
 
-The `input` function is equally important. It enables your Python programs to interact with users by accepting input from them. The `input` function presents a prompt to the user, and the user's input is returned as a string. Here's an example of using the `input` function:
+The `input()` function is equally important. It enables your Python programs to interact with users by accepting input from them. The `input()` function presents a prompt to the user, and the user's input is returned as a string. Here's an example of using the `input()` function:
 
 ```python
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
@@ -181,7 +180,7 @@ Please enter your name: John
 Hello, John!
 ```
 
-In this example, the `input` function displays the message "Please enter your name: " and waits for the user to type their name. The user's input is then stored in the `user_input` variable.
+In this example, the `input()` function displays the message "Please enter your name: " and waits for the user to type their name. The user's input is then stored in the `user_input` variable.
 
 ## Python Characteristics
 
@@ -256,9 +255,9 @@ For multi-line comments, Python allows the use of triple-quotes (`'''`) or (`"""
 
 ## `dir` and `help` Function
 
-Python equips you with useful tools, such as the `dir` function and the `help` function. These tools are invaluable for exploring and comprehending Python libraries and modules as you apply them to your network engineering tasks.
+Python equips you with useful tools, such as the `dir()` function and the `help()` function. These tools are invaluable for exploring and comprehending Python libraries and modules as you apply them to your network engineering tasks.
 
-The `dir` function lists the attributes and methods of objects, providing insights into the capabilities of an object or module. For example, if you want to explore the functionality of a Python module like `os`, you can use `dir(os)` to see a list of functions and attributes it offers.
+The `dir()` function lists the attributes and methods of objects, providing insights into the capabilities of an object or module. For example, if you want to explore the functionality of a Python module like `os`, you can use `dir(os)` to see a list of functions and attributes it offers.
 
 ```python
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
@@ -269,7 +268,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ['readlink', 'remove', ..... 'walk', 'write']
 ```
 
-The `help` function, on the other hand, provides detailed information about specific functions or modules. You can use it to get documentation and usage examples for Python functions and libraries. For instance, you can type `help(os)` to access information about the `os` module.
+The `help()` function, on the other hand, provides detailed information about specific functions or modules. You can use it to get documentation and usage examples for Python functions and libraries. For instance, you can type `help(os)` to access information about the `os` module.
 
 To learn how to use a method that you see in the output of `dir()` function, we can use the built-in function `help()`. The example below shows how we can use `help()` function to use the upper method:
 
