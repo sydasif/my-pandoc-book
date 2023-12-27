@@ -13,7 +13,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = 'Switch-A'
 >>> print(my_var)
-# Output: Switch-A
+Switch-A
 ```
 
 Python's versatility extends to the use of both single and double quotes for creating strings, offering a convenient solution when the need arises to include one type of quote within the string itself. This flexibility empowers developers to handle various scenarios with ease. For example, consider the following code snippet:
@@ -23,7 +23,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> mixed_quotes = "It's a great day to learn Python with 'strings'!"
 >>> print(mixed_quotes)
-# Output: It's a great day to learn Python with 'strings'!
+It's a great day to learn Python with 'strings'!
 ```
 
 In this example, we've used a combination of single and double quotes to create the `mixed_quotes` string, showcasing Python's adaptability in accommodating different quoting styles within the same string.
@@ -35,10 +35,10 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = 'Switch-A'
 >>> print(type(my_var))
-# Output: <class 'str'>
+<class 'str'>
 ```
 
-This will return `<class 'str'>`, indicating that `my_var` is of type "str," which represents a string.
+This will return `<class 'str'>`, indicating that `my_var` is of type `str`, which represents a string.
 
 Python supports multiline strings, which are useful for working with text that spans multiple lines. You can create multiline strings using triple-quotes, either single or double, like this:
 
@@ -48,9 +48,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> multi_line = '''This is the first line,
 ... This is the second line.'''
 >>> print(multi_line)
-# Output:
-# This is the first line,
-# This is the second line.
+This is the first line,
+This is the second line.
 ```
 
 However, it's important to note that if you begin a string with a single quote and conclude it with a double quote, Python will raise an error. This is because Python requires consistency in the choice of quotation marks for starting and ending a string. Mixing single and double quotes in this manner would result in a syntax error.
@@ -63,14 +62,14 @@ When invoking a string method, it is crucial to include parentheses `()` after t
 
 It's important to note that string methods create a new string as their output, leaving the original string unchanged. To preserve the result of a string method, you need to assign it to a new variable or overwrite the original variable, as shown in the example below:
 
-```python
+````python
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = "some string"
 >>> my_var = my_var.upper()
 >>> print(my_var)
-# Output: SOME STRING
-```
+SOME STRING
+````
 
 In this code, the `upper()` method is used to create a new string with all uppercase characters, and this new string is then assigned back to `my_var`. The original value of `my_var` remains unaltered, demonstrating how string methods generate new strings while leaving the original intact.
 
@@ -84,8 +83,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> sentence = "This is a sentence that says something very useful"
 >>> words = sentence.split()
 >>> print(words)
-# Output: 
-# ['This', 'is', 'a', 'sentence', 'that', 'says', 'something', 'very', 'useful']
+['This', 'is', 'a', 'sentence', 'that', 'says', 'something', 'very', 'useful']
 ```
 
 This is particularly handy when you need to tokenize text.
@@ -98,7 +96,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> ip_addr = "172.31.21.15"
 >>> components = ip_addr.split(".")
 >>> print(components)
-# Output: ['172', '31', '21', '15']
+['172', '31', '21', '15']
 ```
 
 In contrast, `.splitlines()` is a method designed to split a string into separate lines based on line breaks or newline characters. It's especially useful when working with multiline text data.
@@ -109,7 +107,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> multiline_text = "The first line.\nSecond line.\nAnd third line."
 >>> lines = multiline_text.splitlines()
 >>> print(lines)
-# Output: ['The first line.', 'Second line.', 'And third line.']
+['The first line.', 'Second line.', 'And third line.']
 ```
 
 This functionality proves invaluable when dealing with multi-line text, such as reading content from files or processing structured data.
@@ -124,7 +122,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> octets = ['172', '31', '21', '15']
 >>> ip_address = ".".join(octets)
 >>> print(ip_address)
-# Output: 172.31.21.15
+172.31.21.15
 ```
 
 The versatility of the `.join()` method enables you to control the format and structure of the resulting string. It's essential to note that Python does not validate the meaning or usage of the elements you're joining; it simply concatenates them as instructed. This flexibility makes `.join()` a valuable tool for various string manipulation tasks, as shown in the example where hyphens are used as the separator:
@@ -135,7 +133,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> octets = ['172', '31', '21', '15']
 >>> formatted_address = "-".join(octets)
 >>> print(formatted_address)
-# Output: 172-31-21-15
+172-31-21-15
 ```
 
 Whether you're working with IP addresses, custom data structures, or any other situation that requires combining strings, the `.join()` method proves to be a powerful and practical tool in your Python programming toolkit.
@@ -148,10 +146,11 @@ Python provides useful methods for cleaning up leading and trailing whitespace i
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> sentence = " In this we have leading and trailing whitespace.  "
-# Output: ' In this we have leading and trailing whitespace.  '
+>>> sentence
+' In this we have leading and trailing whitespace.  '
 >>> cleaned_sentence = sentence.strip()
 >>> cleaned_sentence
-# Output: 'In this we have leading and trailing whitespace.'
+'In this we have leading and trailing whitespace.'
 ```
 
 The result is a string with the extraneous spaces removed:
@@ -168,7 +167,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 config = "hostname R1\nip address 192.168.1.1"
 position = config.find("ip address") # index of "ip address"
 print(position)
-# Output: 12  
+12  
 ```
 
 String methods empower various string operations in network scripting.Commonly used string methods include `upper()`, `split()`, and `find()`.
@@ -182,9 +181,9 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> ipaddr = '10.100.20.5'
 >>> print(ipaddr.startswith('10'))
-# Output: True
+True
 >>> print(ipaddr.endswith('5'))
-# Output: True
+True
 ```
 
 The both method returns `True` if the characters being passed in matches the respective starting or ending of the object, otherwise, it returns `False`.
@@ -199,7 +198,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = "  Some String "
 >>> my_var = my_var.lower().strip()
 >>> print(my_var)
-# Output: some string
+some string
 ```
 
 The `.lower()` method is first applied to convert the string to lowercase, and then `.strip()` is used to remove leading and trailing whitespace. This results in a cleaned and transformed string, all in one line of code. Chaining string methods not only makes your code more readable but also streamlines the process of string manipulation, enhancing your Python programming experience.
@@ -216,7 +215,7 @@ The `%` operator can be used to insert values into a string by specifying placeh
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print("My name is: %s" % "John")
-# Output: My name is: John
+My name is: John
 ```
 
 Here, `%s` serves as a placeholder for a string, and `"John"` is inserted in its place.
@@ -231,7 +230,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> name = "John"
 >>> age = 25
 >>> print("My name is %s and I'm %d years old." % (name, age))
-# Output: My name is John and I'm 25 years old.
+My name is John and I'm 25 years old.
 ```
 
 In this example, `%s` and `%d` are used as placeholders for a string and an integer, respectively. The values `(name, age)` in the tuple replace these placeholders.
@@ -250,7 +249,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> name = "John"
 >>> age = 25
 >>> print("My name is {} and I'm {} years old.".format(name, age))
-# Output: My name is John and I'm 25 years old.
+My name is John and I'm 25 years old.
 ```
 
 With `.format()`, you can insert values in any order, repeat them, or even format them in various ways within the placeholders.
@@ -265,14 +264,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> name = "John"
 >>> age = 25
 >>> print(f"My name is {name} and I'm {age} years old.")
-# Output: My name is John and I'm 25 years old.
+My name is John and I'm 25 years old.
 ```
 
 F-strings are especially beneficial for their simplicity and clarity. They evaluate expressions and insert their results directly into the string, making complex formatting tasks straightforward.
 
-#### Additional aspects of f-strings
-
-F-strings in Python provide powerful capabilities for more advanced string formatting, including:
+**Additional aspects of f-strings:** F-strings in Python provide powerful capabilities for more advanced string formatting, including:
 
 *Allowing Expressions:* F-strings can include expressions within the curly braces. For example, you can directly evaluate and include the result of an expression within the string, as shown here:
 
@@ -280,7 +277,7 @@ F-strings in Python provide powerful capabilities for more advanced string forma
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print(f"Expressions: {2 + 7}")
-# Output: Expressions: 9
+Expressions: 9
 ```
 
 *Extracting Elements from a String:* F-strings can be used to extract and display specific elements from strings. In this example, the first element of an IP address is extracted using the `.split()` method:
@@ -290,7 +287,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> ip_addr = "172.31.21.15"
 >>> print(f"Print 1st element: {ip_addr.split('.')[0]}")
-# Output: Print 1st element: 172
+Print 1st element: 172
 ```
 
 *Creating Columns:* You can format text into columns with f-strings. By specifying a column width and optionally using alignment characters, you can control how the text is displayed:
@@ -304,7 +301,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> ip_addr2 = "192.168.10.1"
 >>> ip_addr3 = "10.10.10.1"
 >>> print(f"{ip_addr1:20}{ip_addr2:20}{ip_addr3:20}")
-# Output: 172.31.21.15        192.168.10.1        10.10.10.1
+172.31.21.15        192.168.10.1        10.10.10.1
 ```
 
 - Right Alignment (`>`):
@@ -316,7 +313,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> ip_addr2 = "192.168.10.1"
 >>> ip_addr3 = "10.10.10.1"
 >>> print(f"{ip_addr1:>20}{ip_addr2:>20}{ip_addr3:>20}")
-# Output:        172.31.21.15        192.168.10.1          10.10.10.1
+    172.31.21.15        192.168.10.1          10.10.10.1
 ```
 
 - Center Alignment (`^`):
@@ -328,7 +325,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> ip_addr2 = "192.168.10.1"
 >>> ip_addr3 = "10.10.10.1"
 >>> print(f"{ip_addr1:^20}{ip_addr2:^20}{ip_addr3:^20}")
-# Output:    172.31.21.15        192.168.10.1          10.10.10.1
+  172.31.21.15        192.168.10.1          10.10.10.1
 ```
 
 *Formatting Floats:* F-strings offer precise control over the formatting of floating-point numbers. You can specify the number of decimal places to display:
@@ -338,7 +335,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> my_var = 1 / 3
 >>> print(f"My Var: {my_var:.2f}")
-# Output: My Var: 0.33
+My Var: 0.33
 ```
 
 *Date Formatting:* F-strings are excellent for formatting dates. You can format a date object using the curly braces and specify the format you desire. In this example, we format the current date:
@@ -349,7 +346,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> from datetime import datetime
 >>> now = datetime.now()
 >>> print(f"Date: {now:%B %d, %Y}")
-# Output: Date: October 22, 2023
+Date: October 22, 2023
 ```
 
 These additional aspects of f-strings enhance their utility, enabling precise control over string formatting, alignment, and more, making them a valuable tool in various Python programming scenarios.
@@ -368,7 +365,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> text = "This is a sample text."
 >>> if "sample" in text:
 >>>    print("Found 'sample' in the text.")
-# Output: Found 'sample' in the text.
+Found 'sample' in the text.
 ```
 
 ### Raw strings
@@ -380,7 +377,7 @@ Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> raw_string = r"C:\Users\Username\Documents"
 >>> print(raw_string)
-# Output: C:\Users\Username\Documents
+C:\Users\Username\Documents
 ```
 
 ### String concatenation
@@ -394,7 +391,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> last_name = "Doe"
 >>> full_name = first_name + " " + last_name
 >>> print(full_name)
-# Output: John Doe
+John Doe
 ```
 
 ### Strings as sequences
@@ -411,7 +408,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> text = "Hello"
 >>> first_character = text[0]  # Accessing the first character
 >>> print(first_character)
-# Output: H
+H
 ```
 
 ### String length and loop
