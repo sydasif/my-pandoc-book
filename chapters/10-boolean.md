@@ -1,16 +1,18 @@
-# Booleans and None
+# Understanding Booleans
 
 Booleans in Python are a fundamental data type that represents two values: `True` and `False`. Booleans are case-sensitive in Python, so `True` and `False` must be written with an uppercase initial letter. Using lowercase such as `true`, or `false`, will result in a NameError.
 
 You can use the `type()` function to check the data type of a variable, including Boolean variables. For example, if you want to check if a variable is a Boolean, you can do the following:
 
 ```python
-my_variable = True
-type(my_variable)
-# Output: <class 'bool'>
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_variable = True
+>>> type(my_variable)
+<class 'bool'>
 ```
 
-This code will correctly identify `my_variable` as a boolean and print "<class 'bool'>"
+This code will correctly identify `my_variable` as a boolean and print `<class 'bool'>`.
 
 ## Boolean Logic in Python
 
@@ -25,12 +27,13 @@ At its core, Boolean logic is all about making decisions. It involves expression
 The `and` operator combines two conditions and returns `True` only if both conditions are `True`. Otherwise, it returns `False`.
 
 ```python
-x = True
-y = False
-
-result = x and y
-
-print(result)  # Output: False
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x = True
+>>> y = False
+>>> result = x and y
+>>> print(result)
+False
 ```
 
 In this example, `result` is `False` because both `x` and `y` need to be `True` for the `and` condition to be satisfied.
@@ -40,12 +43,13 @@ In this example, `result` is `False` because both `x` and `y` need to be `True` 
 The `or` operator combines two conditions and returns `True` if at least one of the conditions is `True`. It returns `False` only if both conditions are `False`.
 
 ```python
-a = True
-b = False
-
-result = a or b
-
-print(result)  # Output: True
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = True
+>>> b = False
+>>> result = a or b
+>>> print(result)  
+True
 ```
 
 Here, `result` is `True` because at least one of the conditions (`a`) is `True`.
@@ -55,11 +59,12 @@ Here, `result` is `True` because at least one of the conditions (`a`) is `True`.
 The `not` operator negates a condition. It returns the opposite of the given condition.
 
 ```python
-z = False
-
-result = not z
-
-print(result)  # Output: True
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> z = False
+>>> result = not z
+>>> print(result)
+True
 ```
 
 In this case, `result` is `True` because `not` inverts the value of `z`.
@@ -69,14 +74,17 @@ In this case, `result` is `True` because `not` inverts the value of `z`.
 Booleans are frequently used in conditional statements like `if`, `elif`, and `else`. These statements allow your code to execute different blocks based on the truth values of conditions.
 
 ```python
-value = 42
-
-if value > 50:
-    print("Value is greater than 50")
-elif value == 50:
-    print("Value is exactly 50")
-else:
-    print("Value is less than 50")
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> value = 42
+>>> if value > 50:
+...     print("Value is greater than 50")
+... elif value == 50:
+...     print("Value is exactly 50")
+... else:
+...     print("Value is less than 50")
+... 
+Value is less than 50
 ```
 
 In this example, the code checks the value of `value` and prints different messages depending on the outcome.
@@ -94,25 +102,37 @@ Truthy values are those that are considered as equivalent to `True` when evaluat
 **Non-zero Numbers:** Any non-zero numerical value, whether it's an integer or a floating-point number, is considered truthy.
 
 ```python
-x = 42
-if x:
-    print("x is truthy")
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x = 42
+>>> if x:
+...     print("x is truthy")
+... 
+x is truthy
 ```
 
 **Non-empty Sequences:** Sequences like lists, tuples, and strings are truthy if they contain elements. An empty sequence is considered falsy.
 
 ```python
-my_list = [1, 2, 3]
-if my_list:
-    print("my_list is truthy")
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x = 42
+>>> if x:
+...     print("x is truthy")
+... 
+x is truthy
 ```
 
 **Non-empty Containers:** Dictionaries, sets, and other container types are truthy when they contain at least one element.
 
 ```python
-my_dict = {'key': 'value'}
-if my_dict:
-    print("my_dict is truthy")
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_dict = {'key': 'value'}
+>>> if my_dict:
+...     print("my_dict is truthy")
+... 
+my_dict is truthy
 ```
 
 ### Falseness of Values in Python
@@ -122,17 +142,25 @@ Falsy values are those that are considered equivalent to `False` when evaluated 
 **Zero:** The integer `0` and the floating-point number `0.0` are considered falsy.
 
 ```python
-y = 0
-if not y:
-    print("y is falsy")
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> y = 0
+>>> if not y:
+...     print("y is falsy")
+... 
+y is falsy
 ```
 
 **Empty Sequences:** As mentioned earlier, empty sequences like empty lists, tuples, and strings are falsy.
 
 ```python
-empty_string = ""
-if not empty_string:
-    print("empty_string is falsy")
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> empty_string = ""
+>>> if not empty_string:
+...     print("empty_string is falsy")
+... 
+empty_string is falsy
 ```
 
 Understanding truthy and falsy values allows you to write more expressive and concise code by simplifying conditional statements. By leveraging these concepts, you can make your code more robust and adaptable to various data scenarios.
@@ -146,7 +174,11 @@ In Python, `None` is a special and unique value that serves several important pu
 `None` is used to denote the absence of a value or the absence of meaningful data. It is particularly handy when you want to initialize a variable but don't have an initial value to assign to it. For example:
 
 ```python
-my_variable = None
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_variable = None
+>>> print(my_variable)
+None
 ```
 
 In this case, `my_variable` exists, but it doesn't have any specific data associated with it. It's like having an empty container waiting to be filled with content.
@@ -156,12 +188,15 @@ In this case, `my_variable` exists, but it doesn't have any specific data associ
 In a boolean context, `None` is considered falsy. This means that when used in conditional statements, `None` evaluates to `False`. Let's see this in action:
 
 ```python
-value = None
-
-if value:
-    print("This will not be printed")
-else:
-    print("The condition is not met because value is None")
+Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> value = None
+>>> if value:
+...     print("This will not be printed")
+... else:
+...     print("The condition is not met because value is None")
+... 
+The condition is not met because value is None
 ```
 
 In this code, the second `print` statement is executed because the condition `if value` is not met due to the falseness of `None`. This behavior is particularly useful when you want to check if a variable has been assigned a meaningful value. If it's `None`, you can interpret it as an absence of data or an unset state.
