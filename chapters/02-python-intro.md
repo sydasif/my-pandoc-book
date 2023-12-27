@@ -1,4 +1,4 @@
-# Computer Programming - Introduction
+# Computer Programming - An Introduction
 
 Inside every computer, there’s a special set of instructions that makes a computer to work, is called a computer program. It’s the essential life force that transforms computer hardware into a functional device. To help you understand this concept, think of a computer as a piano, an instrument that remains silent without a skilled musician.
 
@@ -21,7 +21,7 @@ It’s important to note that even the most advanced computers lack true intelli
 
 > *Note*: machine languages are also created by humans.
 
-### The Anatomy of a Language
+### The anatomy of a language
 
 Every language, whether natural or machine-based, comprises the following key elements:
 
@@ -35,7 +35,7 @@ In the case of machine language, the `IL` serves as the alphabet (`zeroes` and `
 
 A program written in a high-level programming language is referred to as `source code`, and the file containing this source code is known as a `source file`.
 
-### Compilation vs. Interpretation
+### Compilation vs. interpretation
 
 Computer programming involves composing elements of a selected programming language in a manner that achieves the desired outcome. This outcome has depending on the programmer’s imagination, knowledge, and experience.
 
