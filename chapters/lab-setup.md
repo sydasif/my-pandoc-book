@@ -1,4 +1,4 @@
-# Setting Up a Virtual Network Lab with GNS3 on Windows
+# Setting Up a Network Lab with GNS3
 
 ## Introduction
 
