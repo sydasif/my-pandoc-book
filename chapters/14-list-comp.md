@@ -1,4 +1,4 @@
-# Mastering List Comprehensions: Simplifying Data Manipulation with Python
+# List Comprehensions: Simplifying Data Manipulation
 
 List comprehensions are a powerful tool that makes working with lists in Python more efficient and concise. They are especially valuable for network engineers and Python enthusiasts. In this article, we'll dive into list comprehensions, covering the basics and sharing tips and best practices to help you unlock their potential.
 
@@ -66,7 +66,10 @@ network_devices = [
 ]
 
 active_devices = [device for device in network_devices if device["status"] == "active"]
-# Output: [{'name': 'Router1', 'status': 'active'}, {'name': 'Firewall1', 'status': 'active'}]
+```
+
+```zsh
+[{'name': 'Router1', 'status': 'active'}, {'name': 'Firewall1', 'status': 'active'}]
 ```
 
 ### Example: Extracting IP Addresses
@@ -101,14 +104,20 @@ acl_configurations = [
     f"access-list {index} {rule['action']} {rule['source']} {rule['destination']}"
     for index, rule in enumerate(acl_rules, start=100)
 ]
-# Output: ['access-list 100 permit 192.168.1.0/24 10.0.0.0/24', 'access-list 101 deny 10.1.1.0/24 192.168.2.0/24']
+```
+
+```zsh
+['access-list 100 permit 192.168.1.0/24 10.0.0.0/24', 'access-list 101 deny 10.1.1.0/24 192.168.2.0/24']
 ```
 
 ### Example: Generate a List of IP Addresses
 
 ```python
 ip_addresses = [f'192.168.{x}.{y}' for x in range(3) for y in range(2)]
-# Output: ['192.168.0.0', '192.168.0.1', '192.168.1.0', '192.168.1.1', '192.168.2.0', '192.168.2.1']
+```
+
+```zsh
+['192.168.0.0', '192.168.0.1', '192.168.1.0', '192.168.1.1', '192.168.2.0', '192.168.2.1']
 ```
 
 Mastering nested list comprehensions empowers network engineers to handle complex network-related tasks and data structures efficiently.
