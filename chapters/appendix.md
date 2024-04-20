@@ -1,61 +1,31 @@
-# Appendix A: Additional Resources {#additional-resources}
+# Python Development: Essential VS Code Settings
 
-This section contains additional resources related to the content of the book.
+Visual Studio Code (VS Code) is a versatile and powerful code editor developed by Microsoft. It provides a rich set of features for various programming languages, including excellent support for Python development. This blog will explore some essential VS Code settings for Python programming, focusing on creating virtual environments and configuring the Code Runner extension.
 
-## Pandoc Command
+## What is VS Code?
 
-Use this command to create a pdf book.
+Visual Studio Code is a free, open-source code editor that is highly customizable and supports many programming languages. It comes with robust features, extensions, and integrations that enhance the development experience.
 
-```bash
-pandoc chapters/*.md -o output.pdf \
---metadata-file=metadata.yml \
---resource-path=. --toc --number-sections \
---include-in-header main.tex \
---highlight-style pygments.theme \
--V geometry:a5paper \
--V geometry:margin=2cm \
--V fontsize=12pt
-```
+## What is a Virtual Environment?
 
-## Pypandoc
+A virtual environment is an isolated Python environment that allows you to manage dependencies and packages for a specific project. It helps prevent conflicts between different projects by creating a dedicated space for each.
 
-Pypandoc provides a thin wrapper for pandoc, a universal document converter.
+### Setting Up VS Code
 
-```python
-import os
-import pypandoc
+#### Open the Command Palette
 
-input_dir = "chapters"
-output_dir = "my_book"
-output_filename = "book_output_02.pdf"
+Press Ctrl + Shift + P to open the Command Palette in VS Code.
 
-# Ensure the output directory exists
-os.makedirs(output_dir, exist_ok=True)
+#### Create a Virtual Environment
 
-# Build the pandoc options as a string
-pandoc_cmd = [
-    "--toc",
-    "--number-sections",
-    "--resource-path=.",
-    "--metadata-file", "metadata.yml",
-    "--include-in-header", "main.tex",
-    "--highlight-style", "pygments.theme",
-    "-V", "toc-title=Table of contents",
-    "-V", "linkcolor:blue",
-    "-V", "geometry:a4paper",
-    "-V", "geometry:margin=1.8cm",
-    "-V", "mainfont=DejaVu Serif",
-    "-V", "monofont=SauceCodePro Nerd Font",
-    "--pdf-engine=xelatex"
-]
+Enter Python: Create Environment into the search bar of the Command Palette. You can choose options such as .venv or conda based on your preference. This step ensures that your Python project has its dedicated virtual environment.
 
-output_path = os.path.join(output_dir, output_filename)
-# Convert all markdown files in the chapters/ subdirectory.
-pypandoc.convert_file(
-    os.path.join(input_dir, '*.md'), 'pdf', 
-    outputfile=output_path, 
-    extra_args=pandoc_cmd
-)
+#### Install Code Runner Extension
 
-print(f"Conversion completed. Output saved to: {output_path}")
-```
+Go to the Extensions view by Ctrl + Shift + X. Search for Code Runner and install the extension. Code Runner allows you to run your Python code directly from the editor into your terminal.
+
+#### Configure Code Runner
+
+Navigate to File => Preferences => Settings and search for Run Code Configuration." Locate the checkbox for Run in Terminal and ensure it is checked. This setting ensures that the Code Runner extension executes your Python code in the terminal.
+
+Configuring Visual Studio Code for Python development can significantly improve your workflow. By creating a virtual environment and leveraging the Code Runner extension, you ensure a clean and efficient development environment. Now you’re ready to dive into Python programming with the enhanced tools provided by VS Code.
