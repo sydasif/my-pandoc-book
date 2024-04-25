@@ -25,8 +25,8 @@ pip install python-dotenv
 Once installed, you can create a `.env` file in the root directory of your project to store your environment variables. Here's an example of what a `.env` file might look like:
 
 ```bash
-DB_USER=admin
-DB_PASS=cisco123
+SSH_USERNAME=admin
+SSH_PASSWORD=cisco123
 ```
 
 Remember, each line in the `.env` file represents a single environment variable, with the key and value separated by an equals sign `=`. It's essential to keep your `.env` file secure and out of version control by adding it to your `.gitignore` file.
@@ -43,8 +43,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Access environment variables
-db_user = os.getenv("DB_USER")
-db_password = os.getenv("DB_PASS")
+ssh_username = os.getenv("SSH_USERNAME")
+ssh_password = os.getenv("SSH_PASSWORD")
 ```
 
 By using `os.getenv()`, you can retrieve the values of your environment variables within your script securely.
@@ -52,11 +52,9 @@ By using `os.getenv()`, you can retrieve the values of your environment variable
 You can use comments in your `.env` file by prefixing a line with the pound (`#`) character. Comments are ignored by `python-dotenv` when it loads the environment variables from the file. Here's an example of how to use comments in your `.env` file:
 
 ```bash
-# Database Credentials
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=myuser
-DB_PASSWORD=mypassword
+# Credentials
+SSH_USERNAME=admin
+SSH_PASSWORD=cisco123
 
 # API configuration
 API_SECRET=0987654321fedcba
