@@ -37,7 +37,7 @@ device = {
     'ip': '192.168.10.11',
     'username': 'admin',
     'password': 'cisco',
-    'secret': 'cisco',
+    'secret': 'cisco123',
 }
 
 # Connect to the device
@@ -47,14 +47,15 @@ net_connect.enable()  # Enter enable mode
 # Send a show command to the device
 output = net_connect.send_command("show ip int brief")
 print(output)
-
-# Explanation:
-# - Import the ConnectHandler class from Netmiko.
-# - Define device details including device type, IP address, username, password, and secret (if required).
-# - Use the ConnectHandler method to establish an SSH connection to the device.
-# - Enter enable mode on the device.
-# - Send a show command ("show ip int brief") to the device and print the output.
 ```
+
+### Explanation
+
+- Import the ConnectHandler class from Netmiko.
+- Define device details including device type, IP address, username, password, and secret (if required).
+- Use the ConnectHandler method to establish an SSH connection to the device.
+- Enter enable mode on the device.
+- Send a show command ("show ip int brief") to the device and print the output.
 
 ## Making Configuration Changes
 
@@ -69,21 +70,21 @@ devices = [
         'ip': '192.168.10.11',
         'username': 'admin',
         'password': 'cisco',
-        'secret': 'cisco',
+        'secret': 'cisco123',
     },
     {
         'device_type': 'cisco_ios',
         'ip': '192.168.10.12',
         'username': 'admin',
         'password': 'cisco',
-        'secret': 'cisco',
+        'secret': 'cisco123',
     },
     {
         'device_type': 'cisco_ios',
         'ip': '192.168.10.10',
         'username': 'admin',
         'password': 'cisco',
-        'secret': 'cisco',
+        'secret': 'cisco123',
     }
 ]
 
@@ -100,12 +101,13 @@ for device in devices:
     # Display the updated configuration
     output = net_connect.send_command('show running-config | section username')
     print(output)
-
-# Explanation:
-# - Iterate through a list of device dictionaries.
-# - Connect to each device, enter enable mode, and configure the device with a set of commands.
-# - Save the configuration changes and display the updated configuration.
 ```
+
+### Explanation
+
+- Iterate through a list of device dictionaries.
+- Connect to each device, enter enable mode, and configure the device with a set of commands.
+- Save the configuration changes and display the updated configuration.
 
 ## Configuration Changes from a File
 
@@ -119,7 +121,7 @@ device = {
     'ip': '192.168.10.10',
     'username': 'admin',
     'password': 'cisco',
-    'secret': 'cisco',
+    'secret': 'cisco123',
 }
 
 file = "config_file.cfg"
@@ -129,14 +131,15 @@ with ConnectHandler(**device) as net_connect:
     output += net_connect.save_config()
 
 print(output)
-
-# Explanation:
-# - Define device details for a Cisco device.
-# - Specify the path to a configuration file.
-# - Use a context manager to establish a connection to the device.
-# - Apply configurations from the file to the device and save the changes.
-# - Print any output or error messages.
 ```
+
+### Explanation
+
+- Define device details for a Cisco device.
+- Specify the path to a configuration file.
+- Use a context manager to establish a connection to the device.
+- Apply configurations from the file to the device and save the changes.
+- Print any output or error messages.
 
 ## Exception Handling
 
@@ -170,12 +173,13 @@ for device in devices:
         print(f"Device {device['ip']} not reachable")
     except NetmikoAuthenticationException:
         print(f"Authentication failed for {device['ip']}")
-
-# Explanation:
-# - Iterate through a list of device dictionaries.
-# - Attempt to establish a connection to each device and execute a show command.
-# - Handle timeout and authentication exceptions gracefully and print appropriate messages.
 ```
+
+### Explanation
+
+- Iterate through a list of device dictionaries.
+- Attempt to establish a connection to each device and execute a show command.
+- Handle timeout and authentication exceptions gracefully and print appropriate messages.
 
 ## Backup Device Configuration
 
@@ -213,17 +217,16 @@ for device in devices:
 
     with open(f"{device['host']}_{time_stamp}.cfg", 'w') as f:
         f.write(sh_run)
-        print("
-
-Backup saved")
+        print("Backup saved")
 
 print("Finished backup process.")
-
-# Explanation:
-# - Define device details for Cisco devices including host, username, password, and device type.
-# - Retrieve the running configuration of each device and save it to a file with a timestamp.
-# - Print messages to indicate the backup process.
 ```
+
+### Explanation
+
+- Define device details for Cisco devices including host, username, password, and device type.
+- Retrieve the running configuration of each device and save it to a file with a timestamp.
+- Print messages to indicate the backup process.
 
 ## Conclusion
 
