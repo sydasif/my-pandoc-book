@@ -4,7 +4,7 @@ Netmiko is a powerful Python library designed to simplify SSH management of netw
 
 ## What is Netmiko?
 
-Netmiko simplifies SSH management to network devices by providing a unified interface for interacting with devices from different vendors. Its main purposes include:
+Netmiko streamlines SSH management to network devices by providing a unified interface for interacting with devices from different vendors. Its main purposes include:
 
 - Establishing SSH connections to devices
 - Executing, retrieving, and formatting show commands
@@ -50,12 +50,12 @@ connection.disconnect()
 
 ## Simplify Device Connections with Python Dictionaries in Netmiko
 
-To keep our device details organized and accessible, Python dictionaries offer a neat solution for this. Let's say we have a Cisco device with these details: it's running iOS, IP address, and a username and password to access it.
+To keep our device inventory organized and accessible, Python dictionaries offer a well-ordered solution for this. Let's say we have a Cisco device with particulars such as: it's running iOS, IP address, and a username and password to access it.
 
-We can pack all these details neatly into a Python dictionary called "cisco_01":
+We can pack all these details neatly into a Python dictionary called `SW_01`:
 
 ```python
-cisco_01 = {
+SW_01 = {
     "device_type": "cisco_ios",
     "host": "192.168.10.11",
     "username": "admin",
@@ -69,10 +69,10 @@ Now, when we want to connect to this device using Netmiko, we simply unpack this
 from netmiko import ConnectHandler
 
 # Unpacking the dictionary to connect to the device
-connection = ConnectHandler(**cisco_01)
+connection = ConnectHandler(**SW_01)
 ```
 
-We've established a connection to our device using the details stored in our dictionary. Next, we can send commands to our device as usual. Let's fetch the descriptions of its interfaces:
+We've established a connection to our device using the credintials stored in our dictionary. Next, we can send commands to our device as usual. Let's fetch the descriptions of its interfaces:
 
 ```python
 output = connection.send_command('show interface desc')
@@ -92,14 +92,12 @@ Using dictionaries for device details not only keeps our code organized but also
 
 When we're automating tasks on network devices using Netmiko, sometimes we encounter situations where our default login mode doesn't grant us the necessary permissions. For instance, trying to run certain commands like `show run` might result in errors.
 
-To tackle this, Netmiko offers a solution: enabling Privilege EXEC mode. This mode grants us elevated privileges, allowing us to execute a wider range of commands.
-
-Let's see how we can do this in a simple and straightforward manner.
+To tackle this, Netmiko offers a solution: enabling Privilege EXEC mode. This mode grants us elevated privileges, allowing us to execute a wider range of commands. Let's see how we can do this in a simple and straightforward manner.
 
 First, we define our device details in a Python dictionary, just like before:
 
 ```python
-cisco_01 = {
+SW_01 = {
     "device_type": "cisco_ios",
     "host": "192.168.10.11",
     "username": "admin",
@@ -108,32 +106,26 @@ cisco_01 = {
 }
 ```
 
-Notice the addition of the "secret" parameter. This is where we specify our enable password, which is needed to access Privilege EXEC mode.
-
-Next, we establish a connection to our device as usual:
+Notice the addition of the `secret` parameter. This is where we specify our `enable` password, which is needed to access Privilege EXEC mode. Next, we establish a connection to our device as usual:
 
 ```python
-connection = ConnectHandler(**cisco_01)
+connection = ConnectHandler(**SW_01)
 ```
 
-Now, here comes the magic part! We use the `enable()` method provided by Netmiko to switch to Privilege EXEC mode:
+Now, here comes the helpful function! The `enable()` method provided by Netmiko to switch to Privilege EXEC mode:
 
 ```python
 connection.enable()
 ```
 
-This simple line of code elevates our permissions, giving us access to more powerful commands.
-
-To verify that we've successfully switched to Privilege EXEC mode, we can use the `find_prompt()` method:
+This simple line of code elevates our permissions, giving us access to more powerful commands. To verify that we've successfully switched to Privilege EXEC mode, we can use the `find_prompt()` method:
 
 ```python
-which_prompt = connection.find_prompt()
-print(which_prompt)
+device_prompt = connection.find_prompt()
+print(device_prompt)
 ```
 
-This will print out the prompt of our device, confirming that we're now in Privilege EXEC mode.
-
-Now, we can confidently execute commands like `show run` without encountering permission issues:
+This will print out the prompt of our device, confirming that we're now in Privilege EXEC mode. Now, we can confidently execute commands like `show run` without encountering permission issues:
 
 ```python
 output = connection.send_command('show run')
@@ -151,14 +143,12 @@ With just a few lines of code, we've unlocked the full potential of our network 
 
 ## Device Configuration with Netmiko
 
-Netmiko, offers a seamless way to enter Global Configuration Mode, where we can make changes to our device's settings.
-
-Let's dive into how we can harness the power of Global Configuration Mode using Netmiko.
+Netmiko, offers a seamless way to enter Global Configuration Mode, where we can make changes to our device's settings. Let's dive into how we can tackle  the power of Global Configuration Mode using Netmiko.
 
 First, we set up our device details in a Python dictionary, just like before:
 
 ```python
-cisco_01 = {
+SW_01 = {
     "device_type": "cisco_ios",
     "host": "192.168.10.11",
     "username": "cisco",
@@ -170,7 +160,7 @@ cisco_01 = {
 We then establish a connection to our device and elevate our permissions to Privilege EXEC mode:
 
 ```python
-connection = ConnectHandler(**cisco_01)
+connection = ConnectHandler(**SW_01)
 connection.enable()  # Enable method
 ```
 
@@ -222,7 +212,7 @@ import getpass
 
 passwd = getpass.getpass('Please enter the password: ')  # Prompt user for password securely
 
-cisco_01 = {
+SW_01 = {
     "device_type": "cisco_ios",
     "host": "192.168.10.11",
     "username": "admin",
@@ -230,7 +220,7 @@ cisco_01 = {
     "secret": passwd  # Enable password from getpass
 }
 
-connection = ConnectHandler(**cisco_01)
+connection = ConnectHandler(**SW_01)
 connection.enable()  # Enter Privilege EXEC mode
 
 output = connection.send_command('show interface desc')
@@ -263,7 +253,7 @@ import getpass
 
 passwd = getpass.getpass('Please enter the password: ')
 
-cisco_01 = {
+SW_01 = {
     "device_type": "cisco_ios",
     "host": "192.168.10.11",
     "username": "cisco",
@@ -275,7 +265,7 @@ cisco_01 = {
 With our device details in place, we establish a connection and elevate our permissions to Privilege EXEC mode:
 
 ```python
-connection = ConnectHandler(**cisco_01)
+connection = ConnectHandler(**SW_01)
 connection.enable()
 ```
 
