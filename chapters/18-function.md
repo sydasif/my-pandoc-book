@@ -283,3 +283,144 @@ If we attempt to access the local variable `b` outside of the function, it resul
 Understanding variable scope is crucial for writing modular and maintainable networking scripts in Python.
 
 As a network engineer diving into Python, these fundamental concepts pave the way for effective network automation. Functions, return values, arguments, and variable scope are the building blocks of modular, scalable, and maintainable networking scripts. By embracing Python's versatility, network engineers can streamline tasks, enhance efficiency, and adapt to the dynamic nature of networking environments.
+
+## Classes and Objects
+
+In Python, everything is an object, meaning everything we create in Python is associated with functions/methods or attributes, or both, attached to an object. This is because everything in Python stems from a class. A class serves as a blueprint for creating objects.
+
+### Creating a Class in Python
+
+Let's take the example of creating a blueprint for a car. A car has certain attributes (properties) and actions (methods).
+
+#### Attributes
+
+- Color
+- Fuel type
+
+#### Methods
+
+- Type of car
+- Capacity of car
+
+To define a class in Python, we use the keyword `class`:
+
+```python
+class Car:
+    
+    # Constructor method
+    def __init__(self, color, fuel):
+        self.color = color
+        self.fuel = fuel
+```
+
+A class essentially outlines how something should be defined. It doesn’t contain actual data. All class definitions start with the `class` keyword, followed by the name of the class and a colon. Any code indented below the class definition is considered part of the class’s body.
+
+> Python class names conventionally use CapitalizedWords: `MyClass` or `My_Class`.
+
+### Objects/Instances
+
+While a class is a blueprint, an instance is an object built from that blueprint, containing data. Once we create an instance of the `Car` class, it's no longer a blueprint:
+
+```python
+# Create an object of the class
+mike_car = Car("Red", "Petrol")
+# Accessing object attributes
+print(f"Color Type: {mike_car.color}")
+print(f"Fuel Type: {mike_car.fuel}")
+```
+
+```shell
+Color Type: Red
+Fuel Type: Petrol
+```
+
+### Instance Methods
+
+Instance methods are functions defined inside a class, callable only from an instance of that class. The first parameter of an instance method is always `self`.
+
+```python
+class Car:
+    
+    # Constructor method
+    def __init__(self, color, fuel):
+        self.color = color
+        self.fuel = fuel
+
+    # Instance method
+    def type(self):
+        description = f"Car has {self.color} color and fuel type is {self.fuel}."
+        return description 
+
+# Create an object of the class
+mike_car = Car("Red", "Petrol")
+# Call instance method
+print(mike_car.type())
+```
+
+```shell
+Car has Red color and fuel type is Petrol.
+```
+
+Let's add more methods:
+
+```python
+# Define a class named Car
+class Car:
+    
+    # Constructor method to initialize object attributes
+    def __init__(self, color, fuel):
+        self.color = color  # Set the color attribute
+        self.fuel = fuel    # Set the fuel attribute
+
+    # Method to describe the type of car
+    def type(self):
+        description = f"Car has {self.color} color and fuel type is {self.fuel}."
+        return description 
+
+# Create an object (instance) of the Car class
+mike_car = Car("Red", "Petrol")
+
+# Call the type() method to describe the car
+print(mike_car.type())
+
+# Define the Car class with more methods
+class Car:
+    
+    # Constructor method to initialize object attributes
+    def __init__(self, color, fuel):
+        self.color = color  # Set the color attribute
+        self.fuel = fuel    # Set the fuel attribute
+
+    # Method to set the owner of the car
+    def owner(self, name):
+        self.name = name    # Set the name attribute
+        return f"Car owner name is {self.name}"
+    
+    # Method to describe the type of car
+    def type(self):
+        description = f"and has {self.color} color, fuel type is {self.fuel}"
+        return description
+
+    # Method to describe the capacity of the car
+    def capacity(self, num):
+        self.num = num      # Set the num attribute
+        return f"and capacity is: {self.num}"
+
+# Create an object (instance) of the Car class
+mike = Car("Red", "Petrol")
+
+# Call various methods to describe the car
+car_owner = mike.owner("'Mike'")
+car_type = mike.type()
+car_cap = mike.capacity(3)
+
+# Construct the complete description of the car
+car_description = f"{car_owner} {car_type} {car_cap}"
+print(car_description)
+```
+
+```shell
+Car owner name is 'Mike' and has Red color, fuel type is Petrol and capacity is: 3
+```
+
+The topic of OOP is vast, and there's much more to Python objects and OOP than we can cover here.
