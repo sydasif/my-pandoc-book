@@ -30,12 +30,9 @@ To establish an SSH connection to a device using Netmiko, import the `ConnectHan
 from netmiko import ConnectHandler
 
 connection = ConnectHandler(
-    host='192.168.10.11',
-    username='admin',
-    password='cisco',
-    device_type='cisco_ios'
-    )
-output = connection.send_command('show ip interface brief')
+    host="172.16.10.12", username="admin", password="cisco", device_type="cisco_ios"
+)
+output = connection.send_command("show ip interface brief")
 print(output)
 connection.disconnect()
 ```
@@ -57,7 +54,7 @@ We can pack all these details neatly into a Python dictionary called `SW_01`:
 ```python
 SW_01 = {
     "device_type": "cisco_ios",
-    "host": "192.168.10.11",
+    "host": "172.16.10.12",
     "username": "admin",
     "password": "cisco"
 }
@@ -99,7 +96,7 @@ First, we define our device details in a Python dictionary, just like before:
 ```python
 SW_01 = {
     "device_type": "cisco_ios",
-    "host": "192.168.10.11",
+    "host": "172.16.10.12",
     "username": "admin",
     "password": "cisco",
     "secret": "cisco123"  # Enable password
@@ -150,9 +147,9 @@ First, we set up our device details in a Python dictionary, just like before:
 ```python
 SW_01 = {
     "device_type": "cisco_ios",
-    "host": "192.168.10.11",
-    "username": "cisco",
-    "password": "cisco123",
+    "host": "172.16.10.11",
+    "username": "admin",
+    "password": "cisco",
     "secret": "cisco123"  # Enable password
 }
 ```
@@ -214,7 +211,7 @@ passwd = getpass.getpass('Please enter the password: ')  # Prompt user for passw
 
 SW_01 = {
     "device_type": "cisco_ios",
-    "host": "192.168.10.11",
+    "host": "172.16.10.11",
     "username": "admin",
     "password": passwd,  # Log in password from getpass
     "secret": passwd  # Enable password from getpass
@@ -255,8 +252,8 @@ passwd = getpass.getpass('Please enter the password: ')
 
 SW_01 = {
     "device_type": "cisco_ios",
-    "host": "192.168.10.11",
-    "username": "cisco",
+    "host": "172.16.10.11",
+    "username": "admin",
     "password": passwd,  # Log in password from getpass
     "secret": passwd  # Enable password from getpass
 }
@@ -313,7 +310,7 @@ import json
 passwd = getpass.getpass('Please enter the password: ')
 
 # List of device IPs
-ip_list = ["192.168.10.11", "192.168.10.12", "192.168.10.13"]
+ip_list = ["172.16.10.11", "172.16.10.12"]
 
 # Create a list of dictionaries for each device
 device_list = []
@@ -323,7 +320,7 @@ for ip in ip_list:
     device = {
         "device_type": "cisco_ios",
         "host": ip,
-        "username": "cisco",
+        "username": "admin",
         "password": passwd,  # Log in password from getpass
         "secret": passwd  # Enable password from getpass
     }
@@ -367,25 +364,18 @@ from netmiko import ConnectHandler
 devices = [
     {
         'device_type': 'cisco_ios',
-        'ip': '192.168.10.11',
+        'ip': '172.16.10.11',
         'username': 'admin',
         'password': 'cisco',
         'secret': 'cisco123',
     },
     {
         'device_type': 'cisco_ios',
-        'ip': '192.168.10.12',
+        'ip': '172.16.10.12',
         'username': 'admin',
         'password': 'cisco',
         'secret': 'cisco123',
     },
-    {
-        'device_type': 'cisco_ios',
-        'ip': '192.168.10.10',
-        'username': 'admin',
-        'password': 'cisco',
-        'secret': 'cisco123',
-    }
 ]
 
 # Iterate through a list of device dictionaries
@@ -421,7 +411,7 @@ from netmiko import ConnectHandler
 # Define device details for a Cisco device
 device = {
     'device_type': 'cisco_ios',
-    'ip': '192.168.10.10',
+    'ip': '172.16.10.11',
     'username': 'admin',
     'password': 'cisco',
     'secret': 'cisco123',
@@ -453,13 +443,13 @@ from netmiko.ssh_exception import NetmikoTimeoutException, NetmikoAuthentication
 devices = [
     {
         'device_type': 'cisco_ios',
-        'ip': '192.168.10.12',
+        'ip': '172.16.10.11',
         'username': 'admin',
         'password': 'cisco123',  # Wrong Password
     },
     {
         'device_type': 'cisco_ios',
-        'ip': '192.168.10.13',  # Wrong IP Address
+        'ip': '172.16.10.12',  # Wrong IP Address
         'username': 'admin',
         'password': 'cisco',
     }
@@ -490,13 +480,13 @@ from datetime import datetime
 # Define device details for Cisco devices
 devices = [
     {
-        "host": "192.168.10.11",
+        "host": "172.16.10.11",
         "username": "admin",
         "password": "cisco",
         "device_type": "cisco_ios",
     },
     {
-        "host": "192.168.10.12",
+        "host": "172.16.10.12",
         "username": "admin",
         "password": "cisco",
         "device_type": "cisco_ios",
