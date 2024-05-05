@@ -423,4 +423,4 @@ print(car_description)
 Car owner name is 'Mike' and has Red color, fuel type is Petrol and capacity is: 3
 ```
 
-The topic of OOP is vast, and there's much more to Python objects and OOP than we can cover here.
+The topic of Object Oriented Programming is vast, and there's much more to Python objects and OOP than we have cover here.
