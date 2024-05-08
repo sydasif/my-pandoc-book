@@ -35,7 +35,7 @@ client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 # Connect to the remote host
 client.connect(
-    hostname="172.16.10.11",
+    hostname="172.16.10.12",
     username="admin",
     password="cisco",
     look_for_keys=False,
@@ -89,6 +89,14 @@ ssh_client.close()
 
 # Close the connection
 client.close()
+```
+
+```bash
+R1#sh ip int bri
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            172.16.10.12    YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+R1#
 ```
 
 ## Handling Exceptions and Error Scenarios Gracefully
@@ -156,7 +164,7 @@ client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 # Connect to the remote device
 client.connect(
-    "172.16.10.11",
+    hostname="172.16.10.12",
     username="admin",
     password="cisco",
     look_for_keys=False,
@@ -171,12 +179,13 @@ print("###### Creating loopback interfaces ######")
 ssh_client.send("conf ter\n")
 
 # Use a for loop and range() to create loopback interfaces
-for interface_number in range(0, 2):
+for interface_number in range(0, 1):
     ssh_client.send(f"int lo {interface_number}\n")
     ssh_client.send(f"ip address 1.1.1.{interface_number} 255.255.255.255\n")
 
 # Wait for the configurations to take effect
 time.sleep(1)
+
 ssh_client.send("end\n")
 ssh_client.send("show ip int brief\n")
 
@@ -187,6 +196,22 @@ print(output.decode("ascii"))
 
 # Close the SSH connection
 client.close()
+```
+
+```bash 
+###### Creating loopback interfaces ######
+
+R1#conf ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int lo 0
+R1(config-if)#ip address 1.1.1.0 255.255.255.255
+R1(config-if)#end
+R1#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            172.16.10.12    YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+Loopback0                  1.1.1.0         YES manual up                    up      
+R1#
 ```
 
 This advanced example demonstrates the flexibility of Paramiko for configuring network devices programmatically. The script showcases the creation of loopback interfaces, providing a practical illustration of how automation can simplify repetitive tasks.
@@ -203,12 +228,16 @@ client = paramiko.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 # For loop and range() function to connect to multiple devices
-for device in range(11, 13):
-    ip = "172.16.10." + str(device)
-    print("\n##### Connecting to the device " + ip + " #####")
+for device in range(11, 12):
+    host = "172.16.10." + str(device)
+    print("\n##### Connecting to the device " + host + " #####")
 
     client.connect(
-        ip, username="admin", password="cisco", look_for_keys=False, allow_agent=False
+        hostname=host, 
+        username="admin", 
+        password="cisco", 
+        look_for_keys=False, 
+        allow_agent=False,
     )
 
     ssh_client = client.invoke_shell()
@@ -217,6 +246,49 @@ for device in range(11, 13):
     output = ssh_client.recv(65000)
     print(output.decode("ascii"))
     client.close()
+```
+
+```bash
+##### Connecting to the device 172.16.10.11 #####
+
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+SW1#show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     unassigned      YES unset  up                    up      
+GigabitEthernet0/1     unassigned      YES unset  up                    up      
+GigabitEthernet0/2     unassigned      YES unset  down                  down    
+GigabitEthernet0/3     unassigned      YES unset  down                  down    
+GigabitEthernet1/0     unassigned      YES unset  down                  down    
+GigabitEthernet1/1     unassigned      YES unset  down                  down    
+GigabitEthernet1/2     unassigned      YES unset  down                  down    
+GigabitEthernet1/3     unassigned      YES unset  down                  down    
+GigabitEthernet2/0     unassigned      YES unset  down                  down    
+GigabitEthernet2/1     unassigned      YES unset  down                  down    
+GigabitEthernet2/2     unassigned      YES unset  down                  down    
+GigabitEthernet2/3     unassigned      YES unset  down                  down    
+GigabitEthernet3/0     unassigned      YES unset  down                  down    
+GigabitEthernet3/1     unassigned      YES unset  down                  down    
+GigabitEthernet3/2     unassigned      YES unset  down                  down    
+GigabitEthernet3/3     unassigned      YES unset  down                  down    
+Loopback0              1.1.1.0         YES manual up                    up      
+Vlan1                  172.16.10.11    YES NVRAM  up                    up      
+SW1#
+
+##### Connecting to the device 172.16.10.12 #####
+
+R1#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            172.16.10.12    YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+Loopback0                  1.1.1.0         YES manual up                    up      
+R1#
 ```
 
 This script demonstrates the scalability of Paramiko, allowing network engineers to connect and interact with multiple devices seamlessly.
@@ -243,7 +315,7 @@ for device in devices:
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
     client.connect(
-        device,
+        hostname=device,
         port=22,
         username=username,
         password=password,
@@ -256,17 +328,87 @@ for device in devices:
 
     # For loop and range() function to create loop back interface
     for num in range(2, 5):
-        ssh_client.send("int lo " + str(num) + "\n")
+        ssh_client.send("int loop " + str(num) + "\n")
         ssh_client.send("ip address 1.1.1." + str(num) + " 255.255.255.255\n")
 
     time.sleep(1)
-    ssh_client.send("do term length 0\n")
-    ssh_client.send("do show ip int brief\n")
+    ssh_client.send("end\n")
+    # ssh_client.send("term length 0\n")
+    ssh_client.send("show ip int brief\n")
     time.sleep(3)
     output = ssh_client.recv(65000)
     print(output.decode("ascii"))
 
     client.close()
+```
+
+```bash
+# #### Connecting to the device 172.16.10.11 ####
+
+
+# **************************************************************************
+# * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+# * education. IOSv is provided as-is and is not supported by Cisco's      *
+# * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+# * of the IOSv Software or Documentation to any third party for any       *
+# * purposes is expressly prohibited except as otherwise authorized by     *
+# * Cisco in writing.                                                      *
+# **************************************************************************
+SW1#config ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#int loop 2
+SW1(config-if)#ip address 1.1.1.2 255.255.255.255
+SW1(config-if)#int loop 3
+SW1(config-if)#ip address 1.1.1.3 255.255.255.255
+SW1(config-if)#int loop 4
+SW1(config-if)#ip address 1.1.1.4 255.255.255.255
+SW1(config-if)#end
+SW1#show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     unassigned      YES unset  up                    up      
+GigabitEthernet0/1     unassigned      YES unset  up                    up      
+GigabitEthernet0/2     unassigned      YES unset  down                  down    
+GigabitEthernet0/3     unassigned      YES unset  down                  down    
+GigabitEthernet1/0     unassigned      YES unset  down                  down    
+GigabitEthernet1/1     unassigned      YES unset  down                  down    
+GigabitEthernet1/2     unassigned      YES unset  down                  down    
+GigabitEthernet1/3     unassigned      YES unset  down                  down    
+GigabitEthernet2/0     unassigned      YES unset  down                  down    
+GigabitEthernet2/1     unassigned      YES unset  down                  down    
+GigabitEthernet2/2     unassigned      YES unset  down                  down    
+GigabitEthernet2/3     unassigned      YES unset  down                  down    
+GigabitEthernet3/0     unassigned      YES unset  down                  down    
+GigabitEthernet3/1     unassigned      YES unset  down                  down    
+GigabitEthernet3/2     unassigned      YES unset  down                  down    
+GigabitEthernet3/3     unassigned      YES unset  down                  down    
+Loopback0              1.1.1.0         YES manual up                    up      
+Loopback2              1.1.1.2         YES manual up                    up      
+Loopback3              1.1.1.3         YES manual up                    up      
+Loopback4              1.1.1.4         YES manual up                    up      
+Vlan1                  172.16.10.11    YES NVRAM  up                    up      
+SW1#
+
+ #### Connecting to the device 172.16.10.12 ####
+
+
+R1#config ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int loop 2
+R1(config-if)#ip address 1.1.1.2 255.255.255.255
+R1(config-if)#int loop 3
+R1(config-if)#ip address 1.1.1.3 255.255.255.255
+R1(config-if)#int loop 4
+R1(config-if)#ip address 1.1.1.4 255.255.255.255
+R1(config-if)#end
+R1#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            172.16.10.12    YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+Loopback0                  1.1.1.0         YES manual up                    up      
+Loopback2                  1.1.1.2         YES manual up                    up      
+Loopback3                  1.1.1.3         YES manual up                    up      
+Loopback4                  1.1.1.4         YES manual up                    up      
+R1#
 ```
 
 This script introduces a more modular approach, where devices are managed through a list, providing simplicity and ease of maintenance.
