@@ -37,6 +37,16 @@ print(output)
 connection.disconnect()
 ```
 
+```bash
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            172.16.10.12    YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+Loopback0                  1.1.1.0         YES manual up                    up      
+Loopback2                  1.1.1.2         YES manual up                    up      
+Loopback3                  1.1.1.3         YES manual up                    up      
+Loopback4                  1.1.1.4         YES manual up                    up
+```
+
 - Import the `ConnectHandler` class from Netmiko.
 - Define device details including device type, IP address, username, password, and secret (if required).
 - Use the `ConnectHandler` method to establish an SSH connection to the device.
@@ -79,8 +89,13 @@ print(output)
 And when we're done, we can gracefully close the connection:
 
 ```python
-print('Closing Connection')
 connection.disconnect()
+```
+
+```bash
+Interface                      Status         Protocol Description
+Fa0/0                          up             up       
+Fa0/1                          admin down     down
 ```
 
 Using dictionaries for device details not only keeps our code organized but also allows us to reuse this information throughout our script. It's like having all your tools neatly arranged in a toolbox, ready for use whenever you need them.
@@ -132,7 +147,6 @@ print(output)
 And when we're done, it's good practice to gracefully close the connection:
 
 ```python
-print('Closing Connection')
 connection.disconnect()
 ```
 
@@ -191,7 +205,6 @@ print(show_output)
 Finally, as a best practice, we gracefully close the connection:
 
 ```python
-print('Closing Connection')
 connection.disconnect()
 ```
 
@@ -290,7 +303,6 @@ print(connection.send_command('show access-lists'))
 Finally, as we wrap up, let's gracefully close the connection:
 
 ```python
-print('Closing Connection')
 connection.disconnect()
 ```
 
@@ -509,9 +521,7 @@ for device in devices:
 print("Finished backup process.")
 ```
 
-- **Backup Configuration**: Retrieve the running
-
- configuration of each device and save it to a file with a timestamp for archival purposes.
+- **Backup Configuration**: Retrieve the running configuration of each device and save it to a file with a timestamp for archival purposes.
 
 ## Conclusion
 
