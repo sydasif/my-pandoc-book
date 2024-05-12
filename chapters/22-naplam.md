@@ -49,8 +49,9 @@ napalm --user admin --password cisco --vendor ios 192.168.10.10 call ping --meth
 For IOS devices, Napalm uses the Netmiko library for interaction. Here are some prerequisites:
 
 - Enable the archive functionality for auto-rollback.
-- Ensure configuration files start with a version and end marker.
 - Enable SCP for file transfers.
+
+See more details on the [Napalm Docs](https://napalm.readthedocs.io/en/latest/support/ios.html)
 
 ## Working with Different Vendor Platforms using NAPALM
 
