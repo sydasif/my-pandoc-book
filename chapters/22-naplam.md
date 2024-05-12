@@ -122,12 +122,15 @@ device.close()
 
 ### Applying Configuration Changes and Managing Network State
 
-NAPALM allows you to apply configuration changes to network devices and manage their state. You can use NAPALM to configure interfaces, modify routing tables, and perform other management tasks. Here's an example of how to configure an interface on a Cisco router:
+In network management, applying configuration changes and ensuring the stability of network states are essential tasks. NAPALM simplifies these operations by providing a unified interface for managing configurations across various network devices. Let's explore how NAPALM can be utilized to configure network interfaces and maintain network states effectively.
+
+#### Example 1: Configuring Interface Description
+
+This example demonstrates how to configure the description for an interface on a Cisco router using NAPALM:
 
 ```python
 import napalm
 
-# Configure an interface
 # Create a NAPALM driver for Cisco IOS
 driver = napalm.get_network_driver("ios")
 
@@ -135,14 +138,55 @@ driver = napalm.get_network_driver("ios")
 device = driver(hostname="172.16.10.11", username="admin", password="cisco")
 device.open()
 
-device.load_merge_candidate(
-    config="Interface GigabitEthernet0/3\ndescription Test Interface",
-)
+# Load the configuration changes
+config = "interface GigabitEthernet0/3\ndescription Test Interface"
+device.load_merge_candidate(config=config)
+
+# Apply the configuration changes
 device.commit_config()
 
 # Close the connection
 device.close()
 ```
+
+In this example, we establish a connection to the Cisco router and load a configuration change to set the description for interface GigabitEthernet0/3. Subsequently, the changes are committed to ensure they take effect.
+
+#### Example 2: Managing Network Configurations
+
+The following example demonstrates how to manage network configurations by loading a candidate configuration from a file, comparing it with the running configuration, and applying the changes if necessary:
+
+```python
+import napalm
+
+# Create a NAPALM driver for Cisco IOS
+driver = napalm.get_network_driver("ios")
+
+# Connect to the device
+device = driver("172.16.10.11", "admin", "cisco")
+device.open()
+
+# Load the candidate configuration from a file
+device.load_merge_candidate(filename="acl.cfg")
+
+# Compare the candidate configuration with the running configuration
+difference = device.compare_config()
+
+# Check for differences and apply the changes if necessary
+if len(difference) > 0:
+    print("Configuration changes detected:")
+    print(difference)
+    device.commit_config()
+else:
+    print("No changes required.")
+    device.discard_config()
+
+# Close the connection
+device.close()
+```
+
+In this example, we load a candidate configuration from a file named `acl.cfg` and compare it with the running configuration. If there are differences, the changes are applied, and if not, the candidate configuration is discarded.
+
+These examples demonstrate the versatility of NAPALM in configuring network devices and managing network states efficiently.
 
 ## Integrating NAPALM with Other Automation Tools and Frameworks
 
