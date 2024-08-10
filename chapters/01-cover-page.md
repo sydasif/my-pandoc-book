@@ -23,4 +23,4 @@ I am an Associate Engineer (DAE in Electronics) exploring network automation as 
 
 ## Conventions
 
-This book is a guide for network engineers and is intended for network engineers to write code. Therefore, no time is spent on coding style. Programming concepts such as object-oriented programming are not covered in detail due to their complexity. However, this book  mainly focuses on getting  Python scripting to work with minimal effort  to automate network devices.
+This book is a guide for network engineers and is intended for network engineers to write code. Therefore, no time is spent on coding style. Programming concepts such as object-oriented programming are not covered in detail due to their complexity. However, this book mainly focuses on getting Python scripting to work with minimal effort to automate network devices.

@@ -62,7 +62,6 @@ The Python interpreter is your way to run Python scripts and execute code. This 
 
 Now, you can enter Python code directly, and the interpreter will execute it. For example, try entering `print("Hello, Python!")`, and you'll see the output immediately.
 
-
 ```python
 Python 3.10.7 ............. [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.

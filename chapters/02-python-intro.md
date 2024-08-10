@@ -25,7 +25,6 @@ It’s important to note that even the most advanced computers lack true intelli
 
 Every language, whether natural or machine-based, comprises the following key elements:
 
-
 - ***Alphabet:*** A set of symbols used to construct words within the language.
 - ***Lexis (Dictionary):*** A collection of words and their meanings within the language.
 - ***Syntax:*** A set of rules governing the structure of sentences and phrases.
@@ -48,23 +47,23 @@ There are two primary methods for translating a program from a high-level progra
 #### Compilation — advantages and disadvantages
 
 - **Advantages**:
-    - Executed code is typically faster.
-    - Only the user needs the compiler; the end-user can use the code without it.
-    - The translated code is stored in machine language, keeping it secure.
+  - Executed code is typically faster.
+  - Only the user needs the compiler; the end-user can use the code without it.
+  - The translated code is stored in machine language, keeping it secure.
 
 - **Disadvantages**:
-    - Compilation is a time-consuming process; you can’t run your code immediately after making changes.
-    - You require a compiler for each hardware platform you want your code to run on.
+  - Compilation is a time-consuming process; you can’t run your code immediately after making changes.
+  - You require a compiler for each hardware platform you want your code to run on.
 
 #### Interpretation — advantages and disadvantages
 
 - **Advantages**:
-    - You can run the code as soon as you finish writing it; no need for additional translation phases.
-    - The code is stored in a programming language, not machine language. It can run on computers with different architectures without separate compilation.
+  - You can run the code as soon as you finish writing it; no need for additional translation phases.
+  - The code is stored in a programming language, not machine language. It can run on computers with different architectures without separate compilation.
 
 - **Disadvantages**:
-    - Interpretation doesn’t result in high-speed execution; your code shares resources with the interpreter.
-    - Both you and the end-user require the interpreter to run your code.
+  - Interpretation doesn’t result in high-speed execution; your code shares resources with the interpreter.
+  - Both you and the end-user require the interpreter to run your code.
 
 Python falls into the category of interpreted languages. To program in Python, you’ll need a Python interpreter. Without it, you won’t be able to execute your code. The best part is that Python is free, making it one of its most significant advantages. Languages designed for interpretation are often referred to as scripting languages, and the source programs written in them are called scripts.
 
